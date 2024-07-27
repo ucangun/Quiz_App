@@ -1,0 +1,46 @@
+.questionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  width: 40rem;
+  height: 30rem;
+
+  color: #fff;
+  background-color: #2d2d2f;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.questionCard p {
+  font-size: 1.8rem;
+}
+
+.questionCard ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.questionCard ul li {
+  width: 30rem;
+  padding: 1rem;
+  background-color: #5c5c5d;
+  border-radius: 0.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.buttonContainer button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+}
