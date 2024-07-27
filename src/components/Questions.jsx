@@ -1,9 +1,11 @@
 import styles from "./Questions.module.css";
 import React, { useState } from "react";
 import data from "../assets/data";
+import { useParams } from "react-router";
 
-const Questions = ({ category }) => {
-  const questions = data[category] || [];
+const Questions = () => {
+  const { selectedCategory } = useParams();
+  const questions = data[selectedCategory] || [];
   const [index, setIndex] = useState(0);
 
   const handleBack = () => {
@@ -15,7 +17,7 @@ const Questions = ({ category }) => {
   };
 
   return (
-    <div>
+    <div className={`${styles.section_questions}`}>
       <div className={styles.questionCard}>
         <p>{questions[index].question}</p>
         <ul>
