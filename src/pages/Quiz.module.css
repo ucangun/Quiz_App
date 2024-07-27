@@ -34,6 +34,12 @@
 .questions {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 10rem;
   align-items: center;
+}
+
+.questions button {
+  display: inline-block;
+  padding: 0.5rem 3rem;
+  border-radius: 0.8rem;
 }

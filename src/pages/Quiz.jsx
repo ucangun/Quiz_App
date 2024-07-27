@@ -1,6 +1,12 @@
 import styles from "./Quiz.module.css";
+import { useState } from "react";
+import Questions from "../components/Questions";
 
 const Quiz = () => {
+  const [showQuestions, setShowQuestions] = useState(false);
+  const handleReadyClick = () => {
+    setShowQuestions(true);
+  };
   return (
     <div className={`${styles.section_quiz}`}>
       <div className={`${styles.container}`}>
@@ -11,8 +17,14 @@ const Quiz = () => {
           <button>React</button>
         </div>
         <div className={`${styles.questions}`}>
-          <h2 className="text-white">Test Your Knowledge</h2>
-          <img src="" alt="" />
+          {showQuestions ? (
+            <Questions />
+          ) : (
+            <>
+              <h2 className="text-white mb-5">Test Your Knowledge</h2>
+              <button onClick={handleReadyClick}>Ready</button>
+            </>
+          )}
         </div>
       </div>
     </div>
