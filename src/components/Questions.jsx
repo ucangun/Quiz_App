@@ -1,5 +1,5 @@
 import styles from "./Questions.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import data from "../assets/data";
 import { useParams } from "react-router";
 

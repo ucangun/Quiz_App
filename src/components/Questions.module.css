@@ -55,13 +55,3 @@
   border: none;
   border-radius: 1rem;
 }
-
-.correct {
-  background-color: green;
-  color: white;
-}
-
-.incorrect {
-  background-color: red;
-  color: white;
-}
