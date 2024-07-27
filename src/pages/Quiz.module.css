@@ -1,0 +1,39 @@
+.section_quiz {
+  background-color: #161618;
+  padding: 20px;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  height: 100%;
+}
+
+.category {
+  background-color: #fff;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0;
+  gap: 1rem;
+}
+
+.category button {
+  width: 10rem;
+  padding: 1.2rem;
+
+  border: none;
+  border-bottom: 3px solid red;
+  color: #fff;
+  background-color: #161618;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+}
