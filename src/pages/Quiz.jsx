@@ -30,7 +30,10 @@ const Quiz = () => {
           <button onClick={() => handleCategoryClick("react")}>React</button>
         </div>
         <div className={`${styles.questions}`}>
-          <h2 className="text-white mb-5">Test Your Knowledge</h2>
+          <h2 className="text-white mb-5">
+            Test Your <span className="text-uppercase">{selectedCategory}</span>{" "}
+            Knowledge
+          </h2>
           <button onClick={handleReadyClick}>Ready</button>
         </div>
       </div>

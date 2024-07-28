@@ -33,7 +33,7 @@
 }
 
 .category button:hover {
-  transform: translateX(2rem);
+  transform: translateX(1rem);
 }
 
 .questions {
@@ -47,4 +47,10 @@
   display: inline-block;
   padding: 0.5rem 3rem;
   border-radius: 0.8rem;
+}
+
+.questions span {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: red;
 }
