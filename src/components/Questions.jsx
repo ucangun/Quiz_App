@@ -15,10 +15,12 @@ const Questions = () => {
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [disabled, setDisabled] = useState(false);
-  const [secondsRemaining, setSecondsRemaining] = useState(420);
+  const [secondsRemaining, setSecondsRemaining] = useState(
+    questions.length * 30
+  );
 
   if (secondsRemaining === 0) {
-    navigate("/resultpage");
+    navigate(`/resultpage/${score}`);
   }
 
   const handleAnswer = (i) => {
@@ -40,7 +42,7 @@ const Questions = () => {
       setAnswer(null);
       setDisabled(false);
     } else {
-      navigate("/resultpage");
+      navigate(`/resultpage/${score}`);
     }
   };
 

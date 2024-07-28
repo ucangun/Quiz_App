@@ -12,7 +12,7 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/questions/:selectedCategory" element={<Questions />} />
-        <Route path="/resultpage" element={<ResultPage />} />
+        <Route path="/resultpage/:score" element={<ResultPage />} />
       </Routes>
     </Router>
   );
