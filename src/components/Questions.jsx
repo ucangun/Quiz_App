@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import data from "../assets/data";
 import { useNavigate, useParams } from "react-router";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import Timer from "./Timer";
 
 const Questions = () => {
   const navigate = useNavigate();
@@ -14,6 +15,11 @@ const Questions = () => {
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [disabled, setDisabled] = useState(false);
+  const [secondsRemaining, setSecondsRemaining] = useState(20);
+
+  if (secondsRemaining === 0) {
+    navigate("/resultpage");
+  }
 
   const handleAnswer = (i) => {
     if (disabled) return;
@@ -27,11 +33,13 @@ const Questions = () => {
     }
   };
 
+  /*
   const handleBack = () => {
     if (index > 0) setIndex((cur) => cur - 1);
     setSelectedOption(null);
     setAnswer(null);
   };
+*/
 
   const handleNext = () => {
     if (index < questions.length - 1) setIndex((cur) => cur + 1);
@@ -52,7 +60,7 @@ const Questions = () => {
         animated
       />
       <div className={styles.questionCard}>
-        <p>{questions[index].question}</p>
+        <p>{`${index + 1} - ${questions[index].question}`}</p>
         <ul>
           {questions[index].options.map((option, i) => (
             <li
@@ -74,7 +82,10 @@ const Questions = () => {
         </ul>
       </div>
       <div className={styles.buttonContainer}>
-        <button onClick={handleBack}>&lt;</button>
+        <Timer
+          secondsRemaining={secondsRemaining}
+          setSecondsRemaining={setSecondsRemaining}
+        />
         <button onClick={handleNext}>&gt;</button>
       </div>
     </div>
