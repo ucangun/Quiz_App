@@ -1,19 +1,24 @@
 import styles from "./Questions.module.css";
 import React, { useState } from "react";
 import data from "../assets/data";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 const Questions = () => {
+  const navigate = useNavigate();
+
   const { selectedCategory } = useParams();
   const questions = data[selectedCategory] || [];
   const [index, setIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [disabled, setDisabled] = useState(false);
 
   const handleAnswer = (i) => {
+    if (disabled) return;
     setSelectedOption(i);
+    setDisabled(true);
     if (questions[index].correctOption === i) {
       setAnswer(true);
       setScore(score + questions[index].points);
@@ -32,6 +37,8 @@ const Questions = () => {
     if (index < questions.length - 1) setIndex((cur) => cur + 1);
     setSelectedOption(null);
     setAnswer(null);
+    setDisabled(false);
+    if (index === questions.length - 1) navigate("/resultpage");
   };
 
   return (
@@ -59,6 +66,7 @@ const Questions = () => {
                     }
                   : {}
               }
+              className={disabled ? styles.disabled : ""}
             >
               {option}
             </li>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Quiz from "../pages/Quiz";
 import Questions from "../components/Questions";
+import ResultPage from "../pages/ResultPage";
 
 const AppRouter = () => {
   return (
@@ -11,6 +12,7 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/questions/:selectedCategory" element={<Questions />} />
+        <Route path="/resultpage" element={<ResultPage />} />
       </Routes>
     </Router>
   );
