@@ -30,8 +30,12 @@ const Quiz = () => {
           <button onClick={() => handleCategoryClick("react")}>React</button>
         </div>
         <div className={`${styles.questions}`}>
-          <h2 className="text-white mb-5">
-            Test Your <span className="text-uppercase">{selectedCategory}</span>{" "}
+          <h2 className="text-white mb-4">
+            Test Your
+            <span className={`${styles.span} text-uppercase`}>
+              {" "}
+              {selectedCategory}{" "}
+            </span>
             Knowledge
           </h2>
           <button onClick={handleReadyClick}>Ready</button>
