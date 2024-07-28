@@ -15,7 +15,7 @@ const Questions = () => {
   const [answer, setAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [disabled, setDisabled] = useState(false);
-  const [secondsRemaining, setSecondsRemaining] = useState(20);
+  const [secondsRemaining, setSecondsRemaining] = useState(420);
 
   if (secondsRemaining === 0) {
     navigate("/resultpage");
@@ -33,20 +33,15 @@ const Questions = () => {
     }
   };
 
-  /*
-  const handleBack = () => {
-    if (index > 0) setIndex((cur) => cur - 1);
-    setSelectedOption(null);
-    setAnswer(null);
-  };
-*/
-
   const handleNext = () => {
-    if (index < questions.length - 1) setIndex((cur) => cur + 1);
-    setSelectedOption(null);
-    setAnswer(null);
-    setDisabled(false);
-    if (index === questions.length - 1) navigate("/resultpage");
+    if (index < questions.length - 1) {
+      setIndex((cur) => cur + 1);
+      setSelectedOption(null);
+      setAnswer(null);
+      setDisabled(false);
+    } else {
+      navigate("/resultpage");
+    }
   };
 
   return (
@@ -86,7 +81,10 @@ const Questions = () => {
           secondsRemaining={secondsRemaining}
           setSecondsRemaining={setSecondsRemaining}
         />
-        <button onClick={handleNext}>&gt;</button>
+
+        <button onClick={handleNext}>
+          {index === questions.length - 1 ? "See Result" : ">"}
+        </button>
       </div>
     </div>
   );
