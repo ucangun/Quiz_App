@@ -83,7 +83,7 @@ const Questions = () => {
         />
 
         <button onClick={handleNext}>
-          {index === questions.length - 1 ? "See Result" : ">"}
+          {index === questions.length - 1 ? "See Result" : "Next"}
         </button>
       </div>
     </div>
