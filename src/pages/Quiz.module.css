@@ -29,6 +29,11 @@
   border-bottom: 3px solid red;
   color: #fff;
   background-color: #161618;
+  transition: all 1s;
+}
+
+.category button:hover {
+  transform: translateX(2rem);
 }
 
 .questions {

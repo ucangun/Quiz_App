@@ -2,6 +2,7 @@ import styles from "./Questions.module.css";
 import React, { useState } from "react";
 import data from "../assets/data";
 import { useParams } from "react-router";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 const Questions = () => {
   const { selectedCategory } = useParams();
@@ -9,11 +10,13 @@ const Questions = () => {
   const [index, setIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [answer, setAnswer] = useState(null);
+  const [score, setScore] = useState(0);
 
   const handleAnswer = (i) => {
     setSelectedOption(i);
     if (questions[index].correctOption === i) {
       setAnswer(true);
+      setScore(score + questions[index].points);
     } else {
       setAnswer(false);
     }
@@ -33,6 +36,14 @@ const Questions = () => {
 
   return (
     <div className={`${styles.section_questions}`}>
+      <ProgressBar
+        variant="success"
+        now={score}
+        label={`${score}`}
+        className={styles.progress}
+        max={100}
+        animated
+      />
       <div className={styles.questionCard}>
         <p>{questions[index].question}</p>
         <ul>

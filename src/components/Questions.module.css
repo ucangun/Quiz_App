@@ -55,3 +55,10 @@
   border: none;
   border-radius: 1rem;
 }
+
+.progress {
+  width: 35rem;
+  height: 1.2rem;
+  color: red;
+  margin: 0 auto 5rem;
+}

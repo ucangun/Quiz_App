@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router";
 import styles from "./Quiz.module.css";
+import { useNavigate } from "react-router";
 import { useState } from "react";
 
 const Quiz = () => {
